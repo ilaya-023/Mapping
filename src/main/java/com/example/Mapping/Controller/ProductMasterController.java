@@ -1,13 +1,18 @@
 package com.example.Mapping.Controller;
 
 import com.example.Mapping.CustomException.ResourceNotFoundException;
+import com.example.Mapping.Entity.AppUser;
+import com.example.Mapping.Repository.AppUserRepository;
 import com.example.Mapping.RequestBean.*;
 import com.example.Mapping.ResponceBean.*;
+//import com.example.Mapping.Service.CustomUserDetailsService;
 import com.example.Mapping.Service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+//import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +25,43 @@ import java.util.Set;
 public class ProductMasterController {
 
     private final ProductService productService;
+    private final AppUserRepository userRepository;
+//    private final CustomUserDetailsService customUserDetailsService;
+
+
+
+//    // Session ID
+//    @GetMapping("/sessionid")
+//    public String session(HttpServletRequest request) {
+//        return request.getSession().getId().toString();
+//    }
+//
+//
+//    //CSRF ID
+//    @GetMapping("csrf")
+//    public CsrfToken csrf(HttpServletRequest request) {
+//        return (CsrfToken) request.getAttribute("_csrf");
+//    }
+//
+//    private final AppUserRepository repo;
+//    private final PasswordEncoder encoder;
+//
+
+//    // Register a new user
+//    @PostMapping("/register")
+//    public String register(@RequestBody UserEntity user) {
+//        user.setPassword(encoder.encode(user.getPassword())); // encrypt password
+//        repo.save(user);
+//        return "User registered successfully!";
+//    }
+//
+//    // Test secured endpoint
+//    @GetMapping("/hello")
+//    public String hello() {
+//        return "Hello, you are authenticated!";
+//    }
+//
+
 
     // Save only product
     @PostMapping("/save")

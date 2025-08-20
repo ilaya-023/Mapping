@@ -1,6 +1,6 @@
 package com.example.Mapping.Repository;
 
-import com.example.Mapping.DTO.ProductDTO;
+//import com.example.Mapping.DTO.ProductDTO;
 import com.example.Mapping.Entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
